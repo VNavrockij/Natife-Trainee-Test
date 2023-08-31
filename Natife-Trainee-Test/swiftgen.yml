@@ -1,0 +1,32 @@
+strings:
+  - inputs: JoinLearners/Resources/LocalizedStrings/en.lproj/Localize.strings
+    outputs:
+      - templatePath: swiftgen_templates/strings/locale.stencil
+        output: JoinLearners/Resources/Generated/AppStrings.generated.swift
+        params:
+          enumName: AppLocale
+          publicAccess: true
+fonts:
+  - inputs: JoinLearners/Resources/Fonts
+    outputs:
+      - templatePath: swiftgen_templates/fonts/swift5.stencil
+        output: JoinLearners/Resources/Generated/AppFonts.generated.swift
+        params:
+          enumName: AppFonts
+          publicAccess: true
+xcassets:
+  - inputs:
+    - JoinLearners/Resources/Assets.xcassets
+    outputs:
+      - templatePath: swiftgen_templates/assets.stencil
+        output: JoinLearners/Resources/Generated/AppAssets.generated.swift
+        params:
+          enumName: AppAssets
+          publicAccess: true
+  - inputs: JoinLearners/Resources/Colors.xcassets
+    outputs:
+      - templatePath: swiftgen_templates/assets.stencil
+        output: JoinLearners/Resources/Generated/AppColors.generated.swift
+        params:
+          enumName: AppColors
+          publicAccess: true

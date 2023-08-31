@@ -13,6 +13,7 @@
 		FAC373FF2AA0A64100689306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC373FD2AA0A64100689306 /* Main.storyboard */; };
 		FAC374012AA0A64200689306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC374002AA0A64200689306 /* Assets.xcassets */; };
 		FAC374042AA0A64200689306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC374022AA0A64200689306 /* LaunchScreen.storyboard */; };
+		FAC3740D2AA0A7C800689306 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = FAC3740C2AA0A7C800689306 /* swiftgen.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FAC374002AA0A64200689306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC374032AA0A64200689306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC374052AA0A64200689306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC3740C2AA0A7C800689306 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +62,20 @@
 				FAC373F92AA0A64100689306 /* SceneDelegate.swift */,
 				FAC373FB2AA0A64100689306 /* ViewController.swift */,
 				FAC373FD2AA0A64100689306 /* Main.storyboard */,
+				FAC3740B2AA0A73C00689306 /* Resources */,
+				FAC3740C2AA0A7C800689306 /* swiftgen.yml */,
+			);
+			path = "Natife-Trainee-Test";
+			sourceTree = "<group>";
+		};
+		FAC3740B2AA0A73C00689306 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				FAC374002AA0A64200689306 /* Assets.xcassets */,
 				FAC374022AA0A64200689306 /* LaunchScreen.storyboard */,
 				FAC374052AA0A64200689306 /* Info.plist */,
 			);
-			path = "Natife-Trainee-Test";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +88,7 @@
 				FAC373F02AA0A64100689306 /* Sources */,
 				FAC373F12AA0A64100689306 /* Frameworks */,
 				FAC373F22AA0A64100689306 /* Resources */,
+				FAC3740E2AA0A7F300689306 /* Swift lint */,
 			);
 			buildRules = (
 			);
@@ -128,10 +140,32 @@
 				FAC374042AA0A64200689306 /* LaunchScreen.storyboard in Resources */,
 				FAC374012AA0A64200689306 /* Assets.xcassets in Resources */,
 				FAC373FF2AA0A64100689306 /* Main.storyboard in Resources */,
+				FAC3740D2AA0A7C800689306 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FAC3740E2AA0A7F300689306 /* Swift lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\n# export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif [ -z \"$CI\" ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint lint --quiet\n    else\n        echo \"error: 😢 SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    fi\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAC373F02AA0A64100689306 /* Sources */ = {
@@ -289,7 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 763C3KNABL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Natife-Trainee-Test/Info.plist";
+				INFOPLIST_FILE = "Natife-Trainee-Test/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 763C3KNABL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Natife-Trainee-Test/Info.plist";
+				INFOPLIST_FILE = "Natife-Trainee-Test/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
