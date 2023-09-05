@@ -8,6 +8,7 @@
 import Foundation
 
 struct K {
-    static let rowHeight: CGFloat = 100.0
     static let identifier = "MyTableViewCell"
+    static let scrollPostsAPI = "https://raw.githubusercontent.com/anton-natife/jsons/master/api/main.json"
+    static let selectPostAPI = "https://raw.githubusercontent.com/anton-natife/jsons/master/api/posts/[id].json"
 }

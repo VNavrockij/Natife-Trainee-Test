@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA8094582AA63DC5000473BE /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8094572AA63DC5000473BE /* PostData.swift */; };
+		FA80945A2AA63EB4000473BE /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8094592AA63EB4000473BE /* PostManager.swift */; };
 		FAC373F82AA0A64100689306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC373F72AA0A64100689306 /* AppDelegate.swift */; };
 		FAC373FA2AA0A64100689306 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC373F92AA0A64100689306 /* SceneDelegate.swift */; };
 		FAC373FC2AA0A64100689306 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC373FB2AA0A64100689306 /* MainViewController.swift */; };
@@ -14,13 +16,15 @@
 		FAC374012AA0A64200689306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC374002AA0A64200689306 /* Assets.xcassets */; };
 		FAC374042AA0A64200689306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC374022AA0A64200689306 /* LaunchScreen.storyboard */; };
 		FAC3740D2AA0A7C800689306 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = FAC3740C2AA0A7C800689306 /* swiftgen.yml */; };
-		FACD60AC2AA5F142004CD4DE /* ExtensionMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD60AB2AA5F142004CD4DE /* ExtensionMainViewController.swift */; };
+		FACD60AC2AA5F142004CD4DE /* MainVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD60AB2AA5F142004CD4DE /* MainVC+Extensions.swift */; };
 		FACD60AF2AA5F1A3004CD4DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD60AE2AA5F1A3004CD4DE /* Constants.swift */; };
 		FACD60B32AA5F200004CD4DE /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD60B12AA5F200004CD4DE /* MyTableViewCell.swift */; };
 		FACD60B42AA5F200004CD4DE /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FACD60B22AA5F200004CD4DE /* MyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA8094572AA63DC5000473BE /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		FA8094592AA63EB4000473BE /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		FAC373F42AA0A64100689306 /* Natife-Trainee-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Natife-Trainee-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC373F72AA0A64100689306 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC373F92AA0A64100689306 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +34,7 @@
 		FAC374032AA0A64200689306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC374052AA0A64200689306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC3740C2AA0A7C800689306 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
-		FACD60AB2AA5F142004CD4DE /* ExtensionMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionMainViewController.swift; sourceTree = "<group>"; };
+		FACD60AB2AA5F142004CD4DE /* MainVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+Extensions.swift"; sourceTree = "<group>"; };
 		FACD60AE2AA5F1A3004CD4DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FACD60B12AA5F200004CD4DE /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		FACD60B22AA5F200004CD4DE /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
@@ -47,12 +51,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FA1C60692AA1C9F20096489B /* Views */ = {
+		FA14F9CB2AA7304500A2C86A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FAC373FD2AA0A64100689306 /* Main.storyboard */,
+				FA14F9CC2AA7305500A2C86A /* MainModule */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FA14F9CC2AA7305500A2C86A /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				FAC373FB2AA0A64100689306 /* MainViewController.swift */,
+				FA14F9CE2AA7309F00A2C86A /* Extensions */,
+				FA14F9CD2AA7308700A2C86A /* Cells */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		FA14F9CD2AA7308700A2C86A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FACD60B02AA5F1E5004CD4DE /* CustomCell */,
-				FAC373FB2AA0A64100689306 /* MainViewController.swift */,
-				FAC373FD2AA0A64100689306 /* Main.storyboard */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA14F9CE2AA7309F00A2C86A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FACD60AB2AA5F142004CD4DE /* MainVC+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA1C60692AA1C9F20096489B /* Views */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,6 +121,7 @@
 		FAC373F62AA0A64100689306 /* Natife-Trainee-Test */ = {
 			isa = PBXGroup;
 			children = (
+				FA14F9CB2AA7304500A2C86A /* Screens */,
 				FA1C606A2AA1CAA80096489B /* Application */,
 				FACD60AD2AA5F18B004CD4DE /* Model */,
 				FA1C60692AA1C9F20096489B /* Views */,
@@ -108,7 +145,6 @@
 		FACD60AA2AA5F111004CD4DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FACD60AB2AA5F142004CD4DE /* ExtensionMainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -117,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				FACD60AE2AA5F1A3004CD4DE /* Constants.swift */,
+				FA8094572AA63DC5000473BE /* PostData.swift */,
+				FA8094592AA63EB4000473BE /* PostManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,7 +267,9 @@
 				FAC373FC2AA0A64100689306 /* MainViewController.swift in Sources */,
 				FAC373F82AA0A64100689306 /* AppDelegate.swift in Sources */,
 				FAC373FA2AA0A64100689306 /* SceneDelegate.swift in Sources */,
-				FACD60AC2AA5F142004CD4DE /* ExtensionMainViewController.swift in Sources */,
+				FACD60AC2AA5F142004CD4DE /* MainVC+Extensions.swift in Sources */,
+				FA80945A2AA63EB4000473BE /* PostManager.swift in Sources */,
+				FA8094582AA63DC5000473BE /* PostData.swift in Sources */,
 				FACD60B32AA5F200004CD4DE /* MyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

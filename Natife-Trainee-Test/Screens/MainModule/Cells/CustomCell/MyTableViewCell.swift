@@ -8,7 +8,11 @@
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
-    @IBOutlet internal weak var customLabel: UILabel!
+//    @IBOutlet internal weak var customLabel: UILabel!
+    @IBOutlet weak var headerPost: UILabel!
+    @IBOutlet weak var descriptionPost: UILabel!
+    @IBOutlet weak var likesPost: UILabel!
+    @IBOutlet weak var dataPost: UILabel!
 
     static func nib() -> UINib {
          UINib(nibName: K.identifier, bundle: nil)
@@ -25,4 +29,9 @@ class MyTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        print("Button Pressed")
+    }
+    
 }
