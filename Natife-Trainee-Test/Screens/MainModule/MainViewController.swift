@@ -14,7 +14,6 @@ class MainViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-//                print(self.dataSource)
             }
         }
     }
@@ -33,4 +32,17 @@ class MainViewController: UIViewController {
 
         tableView.registerCell(type: MyTableViewCell.self)
     }
+
+    @IBAction func sortPressed(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                dataSource.sort(by: {$0.timeshamp < $1.timeshamp})
+            case 1:
+                dataSource.sort(by: {$0.likesCount < $1.likesCount})
+            default: print("def")
+        }
+        tableView.reloadData()
+
+    }
+
 }

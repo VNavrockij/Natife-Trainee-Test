@@ -11,7 +11,7 @@ import UIKit
 extension DetailViewController {
     func updateUI() {
         headerPostDetail.font = .boldSystemFont(ofSize: 18)
-        descriptionPostDetail.font = .systemFont(ofSize: 12)
+        descriptionPostDetail.font = .systemFont(ofSize: 14)
 
         guard let imageString = dataForPost?.postImage, let imageURL = URL(string: imageString) else { return }
         do {

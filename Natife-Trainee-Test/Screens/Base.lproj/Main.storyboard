@@ -30,7 +30,21 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7j6-K0-FeZ" secondAttribute="trailing" id="dJt-pp-A3W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Posts" id="vdE-dJ-RUH"/>
+                    <navigationItem key="navigationItem" title="Posts" id="vdE-dJ-RUH">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="BNq-r9-nSz">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="Pip-lJ-PZr">
+                                <rect key="frame" x="246" y="5.6666666666666679" width="131" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Dates"/>
+                                    <segment title="Likes"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="QDA-H4-C9g"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="7j6-K0-FeZ" id="tye-vf-r3b"/>
                     </connections>

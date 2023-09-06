@@ -21,7 +21,6 @@ class DetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.updateUI()
             }
-            print(dataForPost?.postImage)
         }
     }
 
