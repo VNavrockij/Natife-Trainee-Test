@@ -13,7 +13,13 @@ extension DetailViewController {
         headerPostDetail.font = .boldSystemFont(ofSize: 18)
         descriptionPostDetail.font = .systemFont(ofSize: 12)
 
-        image.image = UIImage(systemName: "paperplane.fill")
+        guard let imageString = dataForPost?.postImage, let imageURL = URL(string: imageString) else { return }
+        do {
+            let imageData = try Data(contentsOf: imageURL)
+            image.image = UIImage(data: imageData)
+            } catch {
+                print(error.localizedDescription)
+            }
 
         if let title = dataForPost?.title,
             let text = dataForPost?.text,

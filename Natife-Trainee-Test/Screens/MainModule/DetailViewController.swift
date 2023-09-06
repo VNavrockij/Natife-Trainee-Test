@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.updateUI()
             }
+            print(dataForPost?.postImage)
         }
     }
 
@@ -28,8 +29,6 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let postNumber = postID else { return }
 
         postManager.performRequestForDetail(postID) { [weak self] result in
             self?.dataForPost = result
