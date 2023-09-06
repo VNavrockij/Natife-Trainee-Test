@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                print(self.dataSource)
+//                print(self.dataSource)
             }
         }
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA12279A2AA89C2B003F1AD3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1227992AA89C2B003F1AD3 /* DetailViewController.swift */; };
+		FA12279C2AA8D899003F1AD3 /* DetailVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12279B2AA8D899003F1AD3 /* DetailVC+Extensions.swift */; };
 		FA8094582AA63DC5000473BE /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8094572AA63DC5000473BE /* PostData.swift */; };
 		FA80945A2AA63EB4000473BE /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8094592AA63EB4000473BE /* PostManager.swift */; };
 		FAC373F82AA0A64100689306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC373F72AA0A64100689306 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		FA1227992AA89C2B003F1AD3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FA12279B2AA8D899003F1AD3 /* DetailVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailVC+Extensions.swift"; sourceTree = "<group>"; };
 		FA8094572AA63DC5000473BE /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		FA8094592AA63EB4000473BE /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		FAC373F42AA0A64100689306 /* Natife-Trainee-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Natife-Trainee-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				FACD60AB2AA5F142004CD4DE /* MainVC+Extensions.swift */,
+				FA12279B2AA8D899003F1AD3 /* DetailVC+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				FA12279A2AA89C2B003F1AD3 /* DetailViewController.swift in Sources */,
 				FACD60AF2AA5F1A3004CD4DE /* Constants.swift in Sources */,
 				FAC373FC2AA0A64100689306 /* MainViewController.swift in Sources */,
+				FA12279C2AA8D899003F1AD3 /* DetailVC+Extensions.swift in Sources */,
 				FAC373F82AA0A64100689306 /* AppDelegate.swift in Sources */,
 				FAC373FA2AA0A64100689306 /* SceneDelegate.swift in Sources */,
 				FACD60AC2AA5F142004CD4DE /* MainVC+Extensions.swift in Sources */,

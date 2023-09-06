@@ -16,11 +16,23 @@ class DetailViewController: UIViewController {
 
     var postID: Int?
 
+    var dataForPost: Post? {
+        didSet {
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        }
+    }
+
+    let postManager = PostManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(postID)
+        guard let postNumber = postID else { return }
 
-        dataPostDetail.text = "\(postID)"
+        postManager.performRequestForDetail(postID) { [weak self] result in
+            self?.dataForPost = result
+        }
     }
 }
