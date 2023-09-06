@@ -10,7 +10,11 @@ import UIKit
 // MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row selected")
+        let storyBoard = UIStoryboard(name: K.main, bundle: nil)
+        guard let detailVC = storyBoard.instantiateViewController(withIdentifier: K.detailVC) as? DetailViewController else { return }
+        let post = dataSource[indexPath.row].postID
+        detailVC.postID = post
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,7 +41,7 @@ extension MainViewController: UITableViewDataSource {
         }
         cell.headerPost.text = dataSource[indexPath.row].title
         cell.descriptionPost.text = dataSource[indexPath.row].previewText
-        cell.likesPost.text = String(dataSource[indexPath.row].likesCount)
+        cell.likesPost.text = "❤️ \(String(dataSource[indexPath.row].likesCount))"
         cell.dataPost.text = String(dataSource[indexPath.row].timeshamp)
         return cell
     }

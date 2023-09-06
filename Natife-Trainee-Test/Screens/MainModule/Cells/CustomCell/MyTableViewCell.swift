@@ -22,7 +22,6 @@ class MyTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         selectionStyle = .none
-        backgroundColor = .opaqueSeparator
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

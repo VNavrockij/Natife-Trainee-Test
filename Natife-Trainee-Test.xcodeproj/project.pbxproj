@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA12279A2AA89C2B003F1AD3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1227992AA89C2B003F1AD3 /* DetailViewController.swift */; };
 		FA8094582AA63DC5000473BE /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8094572AA63DC5000473BE /* PostData.swift */; };
 		FA80945A2AA63EB4000473BE /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8094592AA63EB4000473BE /* PostManager.swift */; };
 		FAC373F82AA0A64100689306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC373F72AA0A64100689306 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA1227992AA89C2B003F1AD3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FA8094572AA63DC5000473BE /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		FA8094592AA63EB4000473BE /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		FAC373F42AA0A64100689306 /* Natife-Trainee-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Natife-Trainee-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC373FB2AA0A64100689306 /* MainViewController.swift */,
+				FA1227992AA89C2B003F1AD3 /* DetailViewController.swift */,
 				FA14F9CE2AA7309F00A2C86A /* Extensions */,
 				FA14F9CD2AA7308700A2C86A /* Cells */,
 			);
@@ -84,13 +87,6 @@
 				FACD60AB2AA5F142004CD4DE /* MainVC+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FA1C60692AA1C9F20096489B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		FA1C606A2AA1CAA80096489B /* Application */ = {
@@ -124,8 +120,6 @@
 				FA14F9CB2AA7304500A2C86A /* Screens */,
 				FA1C606A2AA1CAA80096489B /* Application */,
 				FACD60AD2AA5F18B004CD4DE /* Model */,
-				FA1C60692AA1C9F20096489B /* Views */,
-				FACD60AA2AA5F111004CD4DE /* Controllers */,
 				FAC3740B2AA0A73C00689306 /* Resources */,
 				FAC3740C2AA0A7C800689306 /* swiftgen.yml */,
 			);
@@ -140,13 +134,6 @@
 				FAC374052AA0A64200689306 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		FACD60AA2AA5F111004CD4DE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FACD60AD2AA5F18B004CD4DE /* Model */ = {
@@ -263,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA12279A2AA89C2B003F1AD3 /* DetailViewController.swift in Sources */,
 				FACD60AF2AA5F1A3004CD4DE /* Constants.swift in Sources */,
 				FAC373FC2AA0A64100689306 /* MainViewController.swift in Sources */,
 				FAC373F82AA0A64100689306 /* AppDelegate.swift in Sources */,
