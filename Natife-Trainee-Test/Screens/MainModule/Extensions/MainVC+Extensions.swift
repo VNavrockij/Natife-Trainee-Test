@@ -44,18 +44,33 @@ extension MainViewController: UITableViewDataSource {
         cell.descriptionPost.text = dataSource[indexPath.row].previewText
         cell.likesPost.text = "❤️ \(String(dataSource[indexPath.row].likesCount))"
         cell.dataPost.text = convertToDayAgo(dataSource[indexPath.row].timeshamp)
+
+//        cell.textOnButton.addTarget(self, action: #selector(changeLabel(_:)), for: .touchUpInside)
+//
+//        cell.tableView = tableView
         return cell
     }
+
+//    @objc func changeLabel(_ sender: UIButton) {
+//        print("- - - - - - - - - - - - - - - - - -")
+//
+////        guard let cell = sender.superview as? MyTableViewCell else {
+////            print("0 0 0 0 0 ")
+////            return }
+////
+////
+////        DispatchQueue.main.async {
+////            sender.titleLabel?.text = "Collapse"
+////        }
+//    }
 
     func convertToDayAgo(_ timeshamp: Int) -> String {
         let currentDate = Date()
         let date = Date(timeIntervalSince1970: TimeInterval(timeshamp))
         let calendar = Calendar.current
         let daysAgo = calendar.dateComponents([.day], from: date, to: currentDate).day ?? 0
-        print("date - \(date)")
         return "\(daysAgo) days ago"
     }
-
 }
 
 public extension UITableView {

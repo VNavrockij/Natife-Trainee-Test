@@ -16,10 +16,13 @@ class DetailViewController: UIViewController {
 
     var postID: Int?
 
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+
     var dataForPost: Post? {
         didSet {
             DispatchQueue.main.async {
                 self.updateUI()
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -28,6 +31,12 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        clearingUI()
+
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
 
         postManager.performRequestForDetail(postID) { [weak self] result in
             self?.dataForPost = result

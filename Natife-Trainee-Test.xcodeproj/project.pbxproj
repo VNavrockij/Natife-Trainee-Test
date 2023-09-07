@@ -17,7 +17,6 @@
 		FAC373FF2AA0A64100689306 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC373FD2AA0A64100689306 /* Main.storyboard */; };
 		FAC374012AA0A64200689306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC374002AA0A64200689306 /* Assets.xcassets */; };
 		FAC374042AA0A64200689306 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC374022AA0A64200689306 /* LaunchScreen.storyboard */; };
-		FAC3740D2AA0A7C800689306 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = FAC3740C2AA0A7C800689306 /* swiftgen.yml */; };
 		FACD60AC2AA5F142004CD4DE /* MainVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD60AB2AA5F142004CD4DE /* MainVC+Extensions.swift */; };
 		FACD60AF2AA5F1A3004CD4DE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD60AE2AA5F1A3004CD4DE /* Constants.swift */; };
 		FACD60B32AA5F200004CD4DE /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD60B12AA5F200004CD4DE /* MyTableViewCell.swift */; };
@@ -37,7 +36,6 @@
 		FAC374002AA0A64200689306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC374032AA0A64200689306 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC374052AA0A64200689306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAC3740C2AA0A7C800689306 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		FACD60AB2AA5F142004CD4DE /* MainVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC+Extensions.swift"; sourceTree = "<group>"; };
 		FACD60AE2AA5F1A3004CD4DE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FACD60B12AA5F200004CD4DE /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 				FA1C606A2AA1CAA80096489B /* Application */,
 				FACD60AD2AA5F18B004CD4DE /* Model */,
 				FAC3740B2AA0A73C00689306 /* Resources */,
-				FAC3740C2AA0A7C800689306 /* swiftgen.yml */,
 			);
 			path = "Natife-Trainee-Test";
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 				FAC374042AA0A64200689306 /* LaunchScreen.storyboard in Resources */,
 				FAC374012AA0A64200689306 /* Assets.xcassets in Resources */,
 				FAC373FF2AA0A64100689306 /* Main.storyboard in Resources */,
-				FAC3740D2AA0A7C800689306 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
