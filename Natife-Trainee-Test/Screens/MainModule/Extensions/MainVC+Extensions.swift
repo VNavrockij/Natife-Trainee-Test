@@ -40,10 +40,20 @@ extension MainViewController: UITableViewDataSource {
             return .init()
         }
         cell.headerPost.text = dataSource[indexPath.row].title
+//        cell.descriptionPost.numberOfLines = 2
         cell.descriptionPost.text = dataSource[indexPath.row].previewText
         cell.likesPost.text = "❤️ \(String(dataSource[indexPath.row].likesCount))"
-        cell.dataPost.text = String(dataSource[indexPath.row].timeshamp)
+        cell.dataPost.text = convertToDayAgo(dataSource[indexPath.row].timeshamp)
         return cell
+    }
+
+    func convertToDayAgo(_ timeshamp: Int) -> String {
+        let currentDate = Date()
+        let date = Date(timeIntervalSince1970: TimeInterval(timeshamp))
+        let calendar = Calendar.current
+        let daysAgo = calendar.dateComponents([.day], from: date, to: currentDate).day ?? 0
+        print("date - \(date)")
+        return "\(daysAgo) days ago"
     }
 
 }

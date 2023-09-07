@@ -28,8 +28,15 @@ extension DetailViewController {
             headerPostDetail.text = title
             descriptionPostDetail.text = text
             likesPostDetail.text = "❤️ \(likes)"
-            dataPostDetail.text = "\(timeshamp)"
+            dataPostDetail.text = convertCurrentDate(timeshamp)
         }
+    }
 
+    func convertCurrentDate(_ timeshamp: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(timeshamp))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMMM yyyy"
+        let formattedDate = dateFormatter.string(from: date)
+        return formattedDate
     }
 }
