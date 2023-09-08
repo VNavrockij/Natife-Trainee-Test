@@ -14,7 +14,7 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var dataPost: UILabel!
     @IBOutlet weak var textOnButton: UIButton!
 
-//    weak var tableView: UITableView?
+    var handler: (() -> Void)?
 
     static func nib() -> UINib {
          UINib(nibName: K.identifier, bundle: nil)
@@ -36,22 +36,24 @@ class MyTableViewCell: UITableViewCell {
 
         switch textOnbutton {
             case "Expand":
-                DispatchQueue.main.async {
                     self.descriptionPost.numberOfLines = 0
                     self.textOnButton.setTitle("Collapse", for: .normal)
-                    self.descriptionPost.layoutIfNeeded()
-                    self.descriptionPost.sizeToFit()
 
-                }
             case "Collapse":
-                DispatchQueue.main.async {
                     self.descriptionPost.numberOfLines = 2
                     self.textOnButton.setTitle("Expand", for: .normal)
-                    self.descriptionPost.layoutIfNeeded()
-                    self.descriptionPost.sizeToFit()
-                }
-            default: return
+
+            default:
+                break
         }
+
+        handler?()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        //
     }
 
 }

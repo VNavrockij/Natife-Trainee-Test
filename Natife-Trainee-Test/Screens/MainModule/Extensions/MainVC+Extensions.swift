@@ -32,6 +32,8 @@ extension MainViewController: UITableViewDataSource {
         dataSource.count
     }
 
+    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard
@@ -40,29 +42,18 @@ extension MainViewController: UITableViewDataSource {
             return .init()
         }
         cell.headerPost.text = dataSource[indexPath.row].title
-//        cell.descriptionPost.numberOfLines = 2
         cell.descriptionPost.text = dataSource[indexPath.row].previewText
         cell.likesPost.text = "❤️ \(String(dataSource[indexPath.row].likesCount))"
         cell.dataPost.text = convertToDayAgo(dataSource[indexPath.row].timeshamp)
+        cell.handler = { [indexPath] in
+            tableView.beginUpdates()
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            tableView.endUpdates()
+        }
 
-//        cell.textOnButton.addTarget(self, action: #selector(changeLabel(_:)), for: .touchUpInside)
-//
-//        cell.tableView = tableView
+
         return cell
     }
-
-//    @objc func changeLabel(_ sender: UIButton) {
-//        print("- - - - - - - - - - - - - - - - - -")
-//
-////        guard let cell = sender.superview as? MyTableViewCell else {
-////            print("0 0 0 0 0 ")
-////            return }
-////
-////
-////        DispatchQueue.main.async {
-////            sender.titleLabel?.text = "Collapse"
-////        }
-//    }
 
     func convertToDayAgo(_ timeshamp: Int) -> String {
         let currentDate = Date()
