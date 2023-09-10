@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var headerPost: UILabel!
     @IBOutlet weak var descriptionPost: UILabel!
@@ -14,7 +16,9 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var dataPost: UILabel!
     @IBOutlet weak var textOnButton: UIButton!
 
-    var handler: (() -> Void)?
+    var handler: ((Bool) -> Void)?
+
+    var isExpanded: Bool = false
 
     static func nib() -> UINib {
          UINib(nibName: K.identifier, bundle: nil)
@@ -38,22 +42,20 @@ class MyTableViewCell: UITableViewCell {
             case "Expand":
                     self.descriptionPost.numberOfLines = 0
                     self.textOnButton.setTitle("Collapse", for: .normal)
-
+                    self.isExpanded = true
             case "Collapse":
                     self.descriptionPost.numberOfLines = 2
                     self.textOnButton.setTitle("Expand", for: .normal)
-
+                    self.isExpanded = false
             default:
                 break
         }
 
-        handler?()
+        handler?(self.isExpanded)
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
-
-        //
     }
 
 }

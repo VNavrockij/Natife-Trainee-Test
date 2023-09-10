@@ -10,6 +10,8 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
+    var selectedCells: [Int: Bool] = [:]
+
     var dataSource: [OnePost] = [] {
         didSet {
             DispatchQueue.main.async {

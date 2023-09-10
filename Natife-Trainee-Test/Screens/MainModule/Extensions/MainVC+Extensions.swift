@@ -10,11 +10,14 @@ import UIKit
 // MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         let storyBoard = UIStoryboard(name: K.main, bundle: nil)
         guard let detailVC = storyBoard.instantiateViewController(withIdentifier: K.detailVC) as? DetailViewController else { return }
         let post = dataSource[indexPath.row].postID
         detailVC.postID = post
         navigationController?.pushViewController(detailVC, animated: true)
+
+
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -32,8 +35,6 @@ extension MainViewController: UITableViewDataSource {
         dataSource.count
     }
 
-    
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard
@@ -41,17 +42,28 @@ extension MainViewController: UITableViewDataSource {
         else {
             return .init()
         }
+
         cell.headerPost.text = dataSource[indexPath.row].title
         cell.descriptionPost.text = dataSource[indexPath.row].previewText
         cell.likesPost.text = "❤️ \(String(dataSource[indexPath.row].likesCount))"
         cell.dataPost.text = convertToDayAgo(dataSource[indexPath.row].timeshamp)
-        cell.handler = { [indexPath] in
+
+        if selectedCells[indexPath.row] == true {
+                cell.descriptionPost.numberOfLines = 0
+                cell.textOnButton.titleLabel?.text = "Collapse"
+        } else {
+                cell.descriptionPost.numberOfLines = 2
+                cell.textOnButton.titleLabel?.text = "Expand"
+        }
+
+        cell.handler = { isExpan in
+            self.selectedCells[indexPath.row] = isExpan
             tableView.beginUpdates()
-            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+//            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
             tableView.endUpdates()
         }
 
-
+        print(selectedCells)
         return cell
     }
 
