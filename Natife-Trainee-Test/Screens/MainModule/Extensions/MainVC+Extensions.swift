@@ -11,13 +11,11 @@ import UIKit
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let storyBoard = UIStoryboard(name: K.main, bundle: nil)
-        guard let detailVC = storyBoard.instantiateViewController(withIdentifier: K.detailVC) as? DetailViewController else { return }
+        let storyBoard = UIStoryboard(name: Constants.main, bundle: nil)
+        guard let detailVC = storyBoard.instantiateViewController(withIdentifier: Constants.detailVC) as? DetailViewController else { return }
         let post = dataSource[indexPath.row].postID
         detailVC.postID = post
         navigationController?.pushViewController(detailVC, animated: true)
-
-
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -43,36 +41,29 @@ extension MainViewController: UITableViewDataSource {
             return .init()
         }
 
-        cell.headerPost.text = dataSource[indexPath.row].title
-        cell.descriptionPost.text = dataSource[indexPath.row].previewText
-        cell.likesPost.text = "❤️ \(String(dataSource[indexPath.row].likesCount))"
-        cell.dataPost.text = convertToDayAgo(dataSource[indexPath.row].timeshamp)
+        cell.setContent(
+            title: dataSource[indexPath.row].title,
+            description: dataSource[indexPath.row].previewText,
+            likes: dataSource[indexPath.row].likesCount,
+            dateStamp: dataSource[indexPath.row].timeshamp
+        )
 
-        if selectedCells[indexPath.row] == true {
-                cell.descriptionPost.numberOfLines = 0
-                cell.textOnButton.titleLabel?.text = "Collapse"
-        } else {
-                cell.descriptionPost.numberOfLines = 2
-                cell.textOnButton.titleLabel?.text = "Expand"
-        }
+        cell.configColaapse(selectedCells.contains(indexPath))
 
-        cell.handler = { isExpan in
-            self.selectedCells[indexPath.row] = isExpan
+        cell.handler = { [indexPath] isExpan in
+            switch isExpan {
+                case true:
+                    self.selectedCells.insert(indexPath)
+
+                case false:
+
+                    self.selectedCells.remove(indexPath)
+            }
             tableView.beginUpdates()
-//            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+//            tableView.reloadRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
         }
-
-        print(selectedCells)
         return cell
-    }
-
-    func convertToDayAgo(_ timeshamp: Int) -> String {
-        let currentDate = Date()
-        let date = Date(timeIntervalSince1970: TimeInterval(timeshamp))
-        let calendar = Calendar.current
-        let daysAgo = calendar.dateComponents([.day], from: date, to: currentDate).day ?? 0
-        return "\(daysAgo) days ago"
     }
 }
 

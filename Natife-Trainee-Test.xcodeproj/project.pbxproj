@@ -162,10 +162,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAC374082AA0A64200689306 /* Build configuration list for PBXNativeTarget "Natife-Trainee-Test" */;
 			buildPhases = (
+				FAC3740E2AA0A7F300689306 /* Swift lint */,
 				FAC373F02AA0A64100689306 /* Sources */,
 				FAC373F12AA0A64100689306 /* Frameworks */,
 				FAC373F22AA0A64100689306 /* Resources */,
-				FAC3740E2AA0A7F300689306 /* Swift lint */,
 			);
 			buildRules = (
 			);
@@ -226,6 +226,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		FAC3740E2AA0A7F300689306 /* Swift lint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

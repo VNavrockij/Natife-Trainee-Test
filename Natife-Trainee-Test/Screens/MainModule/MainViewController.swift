@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
-    var selectedCells: [Int: Bool] = [:]
+    var selectedCells: Set<IndexPath> = []
 
     var dataSource: [OnePost] = [] {
         didSet {
@@ -22,7 +22,7 @@ class MainViewController: UIViewController {
     }
 
     let postManager = PostManager()
-    var refreshControl = UIRefreshControl()
+    let refreshControl = UIRefreshControl()
     let activityIndicator = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {

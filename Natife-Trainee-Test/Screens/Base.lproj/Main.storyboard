@@ -31,7 +31,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Posts" id="vdE-dJ-RUH">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="BNq-r9-nSz">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="BNq-r9-nSz">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="Pip-lJ-PZr">
                                 <rect key="frame" x="246" y="5.6666666666666679" width="131" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

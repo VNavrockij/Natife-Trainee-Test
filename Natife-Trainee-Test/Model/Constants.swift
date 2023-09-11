@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct K {
+struct Constants {
     static let identifier = "MyTableViewCell"
     static let detailVC = "DetailViewController"
     static let main = "Main"

@@ -10,9 +10,9 @@ import Foundation
 struct PostManager {
     func performRequest(completion: (([OnePost]) -> Void)?) {
         let decoder = JSONDecoder()
-        if let url = URL(string: K.scrollPostsAPI) {
+        if let url = URL(string: Constants.scrollPostsAPI) {
             let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
+            let task = session.dataTask(with: url) { data, _, error in
                 guard error == nil,
                       let data = data,
                       let decodeData = try? decoder.decode(Posts.self, from: data) else { return }
@@ -26,9 +26,9 @@ struct PostManager {
         guard let savePostID = postID else { return }
 
         let decoder = JSONDecoder()
-        if let url = URL(string: "\(K.selectPostAPI)\(savePostID)\(K.tailJSON)") {
+        if let url = URL(string: "\(Constants.selectPostAPI)\(savePostID)\(Constants.tailJSON)") {
             let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
+            let task = session.dataTask(with: url) { data, _, error in
                 guard error == nil,
                       let data = data,
                       let decoderData = try? decoder.decode(DetailPost.self, from: data) else { return }
